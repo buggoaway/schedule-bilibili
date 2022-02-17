@@ -19,6 +19,7 @@ class userCheck extends base {
     } catch (e) {
       await this.send('登录失效了，速来更新' + +new Date());
     }
+    console.info(result);
     const isLogin = this._.get(result, 'data.isLogin');
     const username = this._.get(result, 'data.uname');
     const money = this._.get(result, 'data.money');
