@@ -29,6 +29,7 @@ class Base {
   }
 
   async get(url, params = {}, field = '') {
+    console.info(url)
     const headers = {
       'Content-Type': 'application/json',
       Referer: 'https://www.bilibili.com',
@@ -48,7 +49,7 @@ class Base {
 
     return field === '' ? result.data : this._.get(result.data, field);
   }
-
+  console.info(result)
   async post(url, params = {}, field = '') {
     const headers = {
       'Content-Type':
@@ -72,7 +73,7 @@ class Base {
     } catch (e) {
       return null;
     }
-
+ console.info(result)
     return field === '' ? result.data : this._.get(result.data, field);
   }
 }
